@@ -56,7 +56,9 @@
      if (k != "exists") {
       atText = atText + "<div class='extension'><h2 class='eTitle'>" + decodeFB(k) + "</h1>Site visits: " + an[k].clicks + "<br>Users: " + an[k].users + "<p><button class='eBtn' onclick='getPageClicks(" + '"' + k + '"' + ",this)'>Views by Page</button></p></div>";
      } else {
-       atText = "No Data Yet"
+      if (an[k] == true) {
+        atText = "No Data Yet"
+      }
      }
     });
     alltop.innerHTML = atText
