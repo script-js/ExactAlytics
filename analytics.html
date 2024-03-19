@@ -55,10 +55,12 @@
     Object.keys(an).forEach(function (k) {
      if (k != "exists") {
       atText = atText + "<div class='extension'><h2 class='eTitle'>" + decodeFB(k) + "</h1>Site visits: " + an[k].clicks + "<br>Users: " + an[k].users + "<p><button class='eBtn' onclick='getPageClicks(" + '"' + k + '"' + ",this)'>Views by Page</button></p></div>";
+     } else {
+       atText = "No Data Yet"
      }
     });
     alltop.innerHTML = atText
-  } else {alltop.innerHTML = "No Data Yet"};
+  } else {alltop.innerHTML = "Error"};
 });
     function getPageClicks(id,btn) {
       get(child(dbRef, "/analytics/" + localStorage.getItem("apiKey") + "/" + id + "/pages")).then((snapshot) => {
