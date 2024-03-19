@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+ <!DOCTYPE HTML>
 <html>
   <head>
     <link rel="stylesheet" href="https://script-js.github.io/js-css/urun.css" />
@@ -104,7 +104,8 @@
       cnKey()
     }
       if (!localStorage.getItem("apiKey")) {
-        document.body.innerHTML = "<h1>Get Started</h1><p>Enter your API key, or create a new one.</p><input id='keyval' placeholder='Your API key' type='email'><button onclick='setKey()'>"
+        document.title = "ExactAlytics"
+        document.body.innerHTML = "<h1>Get Started</h1><p>Enter your API key, or create a new one.</p><input id='keyval' placeholder='Your API key' type='email'><br><button onclick='setKey()' class='eBtn'>Go to Dashboard</button>"
       }
     </script>
   </body>
