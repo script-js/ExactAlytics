@@ -47,7 +47,7 @@
      return text1;
    }
 
-  get(child(dbRef, "/analytics")).then((snapshot) => {
+  get(child(dbRef, "/analytics/" + localStorage.getItem("apiKey"))).then((snapshot) => {
   if (snapshot.exists()) {
     var tosort = {}
       var an = snapshot.val()
@@ -59,7 +59,7 @@
   } else {alltop.innerHTML = "No Data Yet"};
 });
     function getPageClicks(id,btn) {
-      get(child(dbRef, "/analytics/" + id + "/pages")).then((snapshot) => {
+      get(child(dbRef, "/analytics/" + localStorage.getItem("apiKey") + "/" + id + "/pages")).then((snapshot) => {
   if (snapshot.exists()) {
       var an = snapshot.val()
     var atText = "";
