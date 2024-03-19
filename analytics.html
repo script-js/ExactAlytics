@@ -103,7 +103,7 @@
       keyval.value = result;
       cnKey()
     }
-      if (localStorage.getItem("apiKey")) {
+      if (!localStorage.getItem("apiKey")) {
         document.body.innerHTML = "<h1>Get Started</h1><p>Enter your API key, or create a new one.</p><input id='keyval' placeholder='Your API key' type='email'><button onclick='setKey()'>"
       }
     </script>
