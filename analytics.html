@@ -101,11 +101,11 @@
         counter += 1;
       }
       keyval.value = result;
-      cnKey()
+      cnKey(result)
     }
       if (!localStorage.getItem("apiKey")) {
         document.title = "ExactAlytics"
-        document.body.innerHTML = "<h1>Get Started</h1><p>Enter your API key, or create a new one.</p><input id='keyval' placeholder='Your API key' type='email'><br><button onclick='setKey()' class='eBtn'>Go to Dashboard</button>"
+        document.body.innerHTML = "<h1>Get Started</h1><p>Enter an API key</p><input id='keyval' placeholder='Your API key' type='email'><p><button onclick='setKey()' class='eBtn'>Go to Dashboard</button> <button onclick='makeKey()'>Generate a New One</button></p>"
       }
     </script>
   </body>
