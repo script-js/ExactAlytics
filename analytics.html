@@ -114,7 +114,7 @@
         document.title = "ExactAlytics"
         document.body.innerHTML = "<h1>Get Started</h1><p>Enter an API key</p><input id='keyval' placeholder='Your API key'><p><button onclick='setKey()' class='eBtn'>Go to Dashboard</button> <button onclick='makeKey()' class='eBtn'>Generate a New One</button></p>"
       } else {
-       akad.innerHTML = "<h3>Get ExactAlytics on your website</h3><textarea onclick='this.select()' readonly>&lt;script src='https://exactalytics.pages.dev/import.js'&gt;&lt;/script&gt;\n&lt;script&gt;analyticsInit([ENTER PROJECT NAME HERE],'" + localStorage.getItem("apiKey") + ")&lt;/script&gt;</textarea>"
+       akad.innerHTML = "<h3>Get ExactAlytics on your website</h3><textarea onclick='this.select()' readonly>&lt;script src='https://exactalytics.pages.dev/import.js'&gt;&lt;/script&gt;\n&lt;script&gt;analyticsInit('[ENTER PROJECT NAME HERE]','" + localStorage.getItem("apiKey") + "')&lt;/script&gt;</textarea>"
       }
     </script>
   </body>
