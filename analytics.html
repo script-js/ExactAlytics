@@ -11,9 +11,9 @@
   </head>
   <body style="text-align:center">
   <h1>ExactAlytics Dashboard</h1>
-  <div style="width:50%;height:5px;background:white"></div>
+  <div style="width:50%;height:5px;background:white;margin:auto;"></div>
   <div id="alltop" class="flex">Loading Data...</div>
-   <div style="width:50%;height:5px;background:white"></div>
+   <div style="width:50%;height:5px;background:white;margin:auto;"></div>
   <div id="akad"></div>
   <script type="module">
   // Import the functions you need from the SDKs you need
@@ -116,7 +116,7 @@
         document.title = "ExactAlytics"
         document.body.innerHTML = "<h1>Get Started</h1><p>Enter an API key</p><input id='keyval' placeholder='Your API key'><p><button onclick='setKey()' class='eBtn'>Go to Dashboard</button> <button onclick='makeKey()' class='eBtn'>Generate a New One</button></p>"
       } else {
-       akad.innerHTML = "<h3>Get ExactAlytics on your website</h3><textarea onclick='this.select()' readonly>&lt;script src='https://exactalytics.pages.dev/import.js'&gt;&lt;/script&gt;\n&lt;script&gt;analyticsInit('[ENTER PROJECT NAME HERE]','" + localStorage.getItem("apiKey") + "')&lt;/script&gt;</textarea><div style='width:50%;height:5px;background:white'></div><h3>Your API key: " + localStorage.getItem("apiKey") + "</h3>";
+       akad.innerHTML = "<h3>Get ExactAlytics on your website</h3><textarea onclick='this.select()' readonly>&lt;script src='https://exactalytics.pages.dev/import.js'&gt;&lt;/script&gt;\n&lt;script&gt;analyticsInit('[ENTER PROJECT NAME HERE]','" + localStorage.getItem("apiKey") + "')&lt;/script&gt;</textarea><div style='width:50%;height:5px;background:white;margin:auto;'></div><h3>Your API key: " + localStorage.getItem("apiKey") + "</h3>";
       }
     </script>
   </body>
