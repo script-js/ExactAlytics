@@ -96,10 +96,6 @@
       set(ref(db, "/analytics/" + val),{"exists":true})
     }
 
-    window.setKey = setKey
-    window.cnKey = cnKey
-  </script>
-    <script>
     function makeKey() {
       let result = '';
       const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -109,9 +105,20 @@
         result += characters.charAt(Math.floor(Math.random() * charactersLength));
         counter += 1;
       }
-      keyval.value = result;
-      cnKey(result)
+      get(child(dbRef, "/analytics/" + keyval.value)).then((snapshot) => {
+        if (snapshot.exists()) {
+          makeKey()
+        } else {
+          keyval.value = result;
+          cnKey(result)
+        }
+      })
     }
+   
+    window.setKey = setKey
+    window.makeKey = makeKey
+  </script>
+    <script>
       if (!localStorage.getItem("apiKey")) {
         document.title = "ExactAlytics"
         document.body.innerHTML = "<h1>Get Started</h1><p>Enter an API key</p><input id='keyval' placeholder='Your API key'> <button onclick='setKey()' class='eBtn'>Go to Dashboard</button><p><button onclick='makeKey()' class='eBtn'>Generate a New One</button></p>"
