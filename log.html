@@ -52,16 +52,13 @@
       }
     })
   get(child(dbRef, "/analytics/" + apiKey + "/" + metaTitle)).then((snapshot) => {
-  var toadd = {pages:{}}
+  var toadd = {}
     if (snapshot.exists()) {
       var gdata = snapshot.val();
     } else {
       var gdata = {}
     }
     if (window.parent != window.top) {
-      if (gdata.pages) {
-      toadd.pages = gdata.pages
-    }
     if (gdata.embeds) {
       toadd.embeds = gdata.embeds + 1;
     } else {
@@ -83,17 +80,17 @@
     }
     if (gdata.pages) {
       var pages1 = gdata.pages;
-      toadd.pages = gdata.pages
     } else {
       var pages1 = {}
     }
     if (pages1[metaPage]) {
-        toadd.pages[metaPage] = pages1[metaPage] + 1;
+        pages1[metaPage] = pages1[metaPage] + 1;
       } else {
-        toadd.pages[metaPage] = 1;
+        pages1[metaPage] = 1;
       }
     }
   update(ref(db,"/analytics/" + apiKey + "/" + metaTitle),toadd)
+  update(ref(db,"/analytics/" + apiKey + "/" + metaTitle + "/pages"),toadd)
 });
   </script>
   </body>
