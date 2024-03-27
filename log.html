@@ -58,11 +58,19 @@
     } else {
       var gdata = {}
     }
+    if (window.parent != window.top) {
+    if (gdata.embeds) {
+      toadd.embeds = gdata.embeds + 1;
+    } else {
+      toadd.embeds = 1;
+    }
+  } else {
     if (gdata.clicks) {
       toadd.clicks = gdata.clicks + 1;
     } else {
       toadd.clicks = 1;
     }
+  }
     if (!localStorage.getItem("viewdone")) {
       if (gdata.users) {
         toadd.users = gdata.users + 1;
