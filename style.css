@@ -49,5 +49,5 @@ input {
   height: 3px;
   background: white;
   margin: auto;
-  padding: 10px 0px;
+  border: 10px solid rgba(0,0,0,0)
 }
