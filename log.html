@@ -59,6 +59,9 @@
       var gdata = {}
     }
     if (window.parent != window.top) {
+      if (gdata.pages) {
+      toadd.pages = gdata.pages
+    }
     if (gdata.embeds) {
       toadd.embeds = gdata.embeds + 1;
     } else {
