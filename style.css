@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
+* {font-family: "Schibsted Grotesk", sans-serif}
+
 .flex {
   display: flex;
   justify-content: center;
@@ -9,9 +11,10 @@
 
 .site {
   background: #3e59b8;
-  transition: ease 500ms;
+  transition: ease 1s;
   padding: 15px;
   width: 310px;
+  border-radius: 10px;
 }
 
 .site:hover {
@@ -39,4 +42,12 @@ button:hover {
 
 input {
   color: black;
+}
+
+.divider {
+  width: 50%;
+  height: 3px;
+  background: white;
+  margin: auto;
+  padding: 10px 0px;
 }
