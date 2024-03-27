@@ -1,7 +1,7 @@
  <!DOCTYPE HTML>
 <html>
   <head>
-    <link rel="stylesheet" href="https://script-js.github.io/js-css/urun.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>ExactAlytics Dashboard</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -62,7 +62,7 @@
       } else {
        var embText = "None"
       }
-      atText = atText + "<div class='extension'><h2 class='eTitle'>" + decodeFB(k) + "</h1>Site visits: " + an[k].clicks + "<br>Users: " + an[k].users + "<br>Page Embeds: " + embText + "<p><button class='eBtn' onclick='getPageClicks(" + '"' + k + '"' + ",this)'>Views by Page</button></p></div>";
+      atText = atText + "<div class='site'><h2 class='eTitle'>" + decodeFB(k) + "</h1>Site visits: " + an[k].clicks + "<br>Users: " + an[k].users + "<br>Page Embeds: " + embText + "<p><button onclick='getPageClicks(" + '"' + k + '"' + ",this)'>Views by Page</button></p></div>";
      } else {
       if (an[k] == true) {
         atText = "No Data Yet"
@@ -126,7 +126,7 @@
     <script>
       if (!localStorage.getItem("apiKey")) {
         document.title = "ExactAlytics"
-        document.body.innerHTML = "<h1>Get Started</h1><p>Enter an API key</p><input id='keyval' placeholder='Your API key'> <button onclick='setKey()' class='eBtn'>Go to Dashboard</button><p><button onclick='makeKey()' class='eBtn'>Generate a New One</button></p>"
+        document.body.innerHTML = "<h1>Get Started</h1><p>Enter an API key</p><input id='keyval' placeholder='Your API key'> <button onclick='setKey()'>Go to Dashboard</button><p><button onclick='makeKey()'>Generate a New One</button></p>"
       } else {
        akad.innerHTML = "<h3>Get ExactAlytics on your website</h3><textarea onclick='this.select()' readonly>&lt;script src='https://exactalytics.pages.dev/import.js'&gt;&lt;/script&gt;\n&lt;script&gt;analyticsInit('[ENTER PROJECT NAME HERE]','" + localStorage.getItem("apiKey") + "')&lt;/script&gt;</textarea><div style='width:50%;height:3px;background:white;margin:auto;'></div><h3>Your API key: " + localStorage.getItem("apiKey") + "</h3>";
       }
