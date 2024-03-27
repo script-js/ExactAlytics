@@ -57,7 +57,12 @@
     var atText = "";
     Object.keys(an).forEach(function (k) {
      if (k != "exists") {
-      atText = atText + "<div class='extension'><h2 class='eTitle'>" + decodeFB(k) + "</h1>Site visits: " + an[k].clicks + "<br>Users: " + an[k].users + "<br>Page Embeds: " + an[k].embeds + "<p><button class='eBtn' onclick='getPageClicks(" + '"' + k + '"' + ",this)'>Views by Page</button></p></div>";
+      if (an[k].embeds) {
+       var embText = an[k].embeds
+      } else {
+       var embText = "None"
+      }
+      atText = atText + "<div class='extension'><h2 class='eTitle'>" + decodeFB(k) + "</h1>Site visits: " + an[k].clicks + "<br>Users: " + an[k].users + "<br>Page Embeds: " + embText + "<p><button class='eBtn' onclick='getPageClicks(" + '"' + k + '"' + ",this)'>Views by Page</button></p></div>";
      } else {
       if (an[k] == true) {
         atText = "No Data Yet"
